@@ -27,13 +27,86 @@
       </nav>
     </header>
     <main>
-      <section class="hero"></section>
+      <section class="hero">
       <span class="hello">Hello, I am</span>
       <h2 class="name">Arek Dec.</h2>
       <hr>
       <span class="devo">Frontend Developer. </span>
-      <span class="description">Deeply passionate about creating immersive UI that captivate users and stay ahead of new design trends.
-      </span>
+      <span class="description">Deeply passionate about creating immersive UI that captivate users and stay ahead of new design trends.</span>
+      <div class="button-down">      
+        <img src="/Icons/PhCaretDown.svg" alt="caret down"/>
+      </div>
+      </section>
+      <section class="about">
+        <h2>Get to know,</h2>
+        <div class='column'>
+          <h3>My aproach</h3>
+          <p>As a Frontend Developer, I am constantly eager to expand my skillset, explore new frameworks, and experiment with cutting-edge technologies to create modern and innovative web experiences.</p>
+          <p>My primary focus is on building front-end projects that prioritize user experiences (UX), while also delivering clean and functional designs.</p>
+          <p>I encourage you to explore some of my projects in the Projects section.</p>
+        </div>
+        <div class='column'>
+          <h3>Skills</h3>
+          <div class="tag-container">
+          </div>
+        </div>
+      </section>
+      <section class="projects">
+        <h2>Projects</h2>
+        <article>
+          <div class="column">
+            <img src="\Images\retolkienit2.jpg" alt="screen of website view">
+          </div>
+          <div class="column">
+            <h3>reTolkienddit</h3>
+            <span class="small-text">Technology</span> 
+
+            <span class="small-text">Summary</span> 
+            <p>I decided to recreate the Frontend of Boreal Coffee's official Web App as I got attracted to their beautiful UI and it was a great opportunity for me to showcase my frontend skills by rebuilding the UI and it ended up being a great experience for me.</p>
+            <p>I used my frontend tools to build the User Interface which works on all types of devices along with the SPA library to make the frontend perform faster.</p>
+            <div class="links">
+              <a><button class="primary">View Project <img src="\Icons\IcBaselineLaunch.svg" alt="link"></button></a>
+              <a><button class="secondary">Source Code <img src="\Icons\MdiGithub.svg" alt="link"></button></a>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="contact">
+        <div class="container">
+          <h2>Stay in touch,</h2>
+          <p>use the form below or write me a message directly.</p>
+          <form action="/submit" method="post" aria-label="Email Form">
+            <div class="form-field">
+              <label for="email" class="hidden">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="Email Address" aria-required="true" required>
+            </div>
+            <div class="form-field">
+              <label for="name" class="hidden">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your Name" aria-required="true" required >
+            </div>
+            <div class="form-field">
+              <label for="subject" class="hidden">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Subject" aria-required="true" required>
+            </div>
+            <div class="form-field">
+              <label for="text" class="hidden">Message</label>
+              <textarea id="text" name="text" placeholder="Your message" aria-required="true" required></textarea>
+            </div>
+            <input type="submit" value="Submit">
+          </form>
+        </div>        
+      </section>
+      <footer>
+        <nav class="social">
+          <ul>
+            <li><a><img src="/Icons/MdiGithub.svg" alt="github"></a></li>
+            <li><a><img src="/Icons/MdiLinkedin.svg" alt="linkedin"></a></li>
+          </ul>
+        </nav>
+        <span class="footer-text">Copyright © 2023 Arek Dec. Website source code on GitHub.</span>
+      </footer>
+
+
     </main>
   </main>
   </body>
