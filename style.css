@@ -1,7 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;600;700&display=swap');
 
 
 
-.iconify {
-    width: 20px;
-    height: 100%
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+:root {
+    /* Var */
+
+    --svg-dot: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath fill='%23888888' d='M128 98a30 30 0 1 0 30 30a30 30 0 0 0-30-30Zm0 48a18 18 0 1 1 18-18a18 18 0 0 1-18 18Z'/%3E%3C/svg%3E");
+
+
+
+    /* Typography */
+
+    --main-font: 'Montserrat', sans-serif;
+    --sec-font: 'Michroma', sans-serif;
+
+    font-family: var(--main-font);
+    
+    /* Colors */
+
+    --main-light-color: #fff;
+    --sec-light-color: #F0F0F0;
+    --main-dark-color: #283147;
+    --font-gray-color: #4B4B4B;
+    --light-gray-color: #D0CFCF;
+    --dark-gray-color: #DDDDDD;
+    --bg-gray: #F2ECEC;
+    --bg-dark: #1E1B22;
+    --accent-color: #6C7CD0;
+
+
+    /* Animations */
+    --simple-transition: all 0.2s ease-out;
+
+
+    font-size: 16px;
+
+
+
+}
+
+
+.hero {
+    background-color:hsla(240,18%,22%,1);
+    background-image:
+    radial-gradient(at 11% 94%, hsla(289,24%,36%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
+    radial-gradient(at 36% 60%, hsla(322,45%,41%,1) 0px, transparent 50%),
+    radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
+    radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%)
+}
+
+
+body {
+    background-color: #283147;
+    margin: 0;
+
+}
+
+
+.logo {
+    color: var(--dark-gray-color);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border-radius: 1.1rem;
+    border: 2px solid var(--dark-gray-color);
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 10;
+
+}
+
+.main-nav {
+    position: fixed;
+    top: 2rem;
+    right: 3rem;
+
+    & ul {
+        font-size: 0.9rem;
+        font-weight: bold;
+        list-style-type: none;
+    }
+
+    & li {
+        text-align: center;
+        margin-bottom: 0.5rem;
+        
+    }
+
+    & li::before {
+        display: flex;
+        justify-content: center;
+        content: var(--svg-dot);
+        filter: brightness(0) saturate(100%) invert(100%) sepia(76%) saturate(891%) hue-rotate(187deg) brightness(117%) contrast(73%);
+
+    }
+
+
+    & a {
+        color: var(--dark-gray-color);
+        text-transform: uppercase;
+        font-weight: 600;
+        text-decoration: none; 
+        transition: var(--simple-transition);
+
+        &:hover {
+            color: var(--main-light-color);
+        }
+    }
+
+
+};
+
+
+.resume {
+    
+    border: 1px solid var(--dark-gray-color);
+    padding: .8rem 1.4rem;
+    transition: var(--simple-transition);
+
+    &:hover {
+        border: 1px solid var(--main-light-color);
+    }
 }
