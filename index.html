@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <link rel="stylesheet" href="./style.css">
+    <script async src="script.js"></script>
   </head>
   <body>
     <header>
@@ -27,19 +28,30 @@
       </nav>
 
       <section class="hero">
-      <span class="hello">Hello, I am</span>
-      <h2 class="name">Arek Dec.</h2>
-      <hr>
-      <span class="devo">Frontend Developer. </span>
-      <span class="description">Deeply passionate about creating immersive UI that captivate users and stay ahead of new design trends.</span>
+        <div class="container">
+        <span class="hello">Hello, I am</span>
+        <h2 class="name">Arek Dec.</h2>
+        <hr>
+        <span class="devo">Frontend Developer. </span>
+        <span class="description">Deeply passionate about creating immersive UI that captivate users and stay ahead of new design trends.</span>
+      </div>
+
       <div class="button-down">      
-        <img src="/Icons/PhCaretDown.svg" alt="caret down"/>
+        <img src="/Icons/PhCaretDownLight.svg" alt="caret down" class="caret"/>
+      </div>
+      <div class="svg-container">
+        <svg class='responsive-svg' width="100%" height="auto" viewBox="0 0 1920 155" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block; line-height: 0;">
+          <path d="M1358.32 104.895C1695.55 84.3437 2026.99 -56.2324 2077.68 61.158C2124.84 170.358 2095.16 34.4206 2024 158L-66 158L-168.446 172.609C-180.517 182.381 -194.833 185.919 -216 179.39L-168.446 172.609C-122.737 135.606 -109.224 9.21566 122.182 1.58411C558.399 -12.8019 642.64 148.511 1358.32 104.895Z" fill="#F2ECEC"/>
+      
+        </svg>
       </div>
       </section>
       <main>
       <section class="about">
-        <h2>Get to know,</h2>
-        <div class='column'>
+
+        <div class='container container-content'>
+          <h2>Get to know,</h2>
+          <div class='column'>
           <h3>My aproach</h3>
           <p>As a Frontend Developer, I am constantly eager to expand my skillset, explore new frameworks, and experiment with cutting-edge technologies to create modern and innovative web experiences.</p>
           <p>My primary focus is on building front-end projects that prioritize user experiences (UX), while also delivering clean and functional designs.</p>
@@ -50,10 +62,11 @@
           <div class="tag-container">
           </div>
         </div>
+      </div>
       </section>
       <section class="projects">
         <h2>Projects</h2>
-        <article>
+        <article class="container-content">
           <div class="column">
             <img src="\Images\retolkienit2.jpg" alt="screen of website view">
           </div>

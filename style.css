@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 
 
@@ -12,8 +12,6 @@
     /* Var */
 
     --svg-dot: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath fill='%23888888' d='M128 98a30 30 0 1 0 30 30a30 30 0 0 0-30-30Zm0 48a18 18 0 1 1 18-18a18 18 0 0 1-18 18Z'/%3E%3C/svg%3E");
-
-
 
     /* Typography */
 
@@ -39,22 +37,29 @@
     --simple-transition: all 0.2s ease-out;
 
 
-    font-size: 16px;
 
+    /* Margins */
+
+    --margin-frame: clamp(1rem, 2vw, 2rem)
 
 
 }
 
 
-.hero {
-    background-color:hsla(240,18%,22%,1);
-    background-image:
-    radial-gradient(at 11% 94%, hsla(289,24%,36%,1) 0px, transparent 50%),
-    radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
-    radial-gradient(at 36% 60%, hsla(322,45%,41%,1) 0px, transparent 50%),
-    radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
-    radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%)
-}
+/* Aniamations */
+
+
+@keyframes moveUpDown {
+    /* Define the keyframes for the animation */
+    from {
+      transform: translateY(-5px); /* Start position: no translation */
+      opacity: 1
+    }
+    to {
+      transform: translateY(15px); /* End position: translate vertically by 10 pixels */
+      opacity: 0;
+    }
+  }
 
 
 body {
@@ -63,60 +68,84 @@ body {
 
 }
 
+h2 {
+    font-family: var(--sec-font);
+    color: var(--main-dark-color);
+    font-size: clamp(1.75rem, 4vw, 4.25rem);
+    font-weight: 400;
+}
+
+h3 {
+    font-family: var(--sec-font);
+    color: var(--main-dark-color);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    
+    
+}
+
+
+p {
+    font-size: clamp(.9rem, 2vw, 1.25rem);
+}
+
 
 .logo {
     color: var(--dark-gray-color);
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 1vw, 1.2rem);
     text-transform: uppercase;
     padding: 0.5rem;
-    border-radius: 1.1rem;
+    border-radius: clamp(0.9rem, 1vw, 1.1rem);
     border: 2px solid var(--dark-gray-color);
     position: fixed;
-    top: 2rem;
-    left: 2rem;
+    top: var(--margin-frame);
+    left: var(--margin-frame);
     z-index: 10;
 
 }
 
 .main-nav {
     position: fixed;
-    top: 2rem;
+    top: var(--margin-frame);;
     right: 3rem;
+    z-index: 10;
 
-    & ul {
-        font-size: 0.9rem;
-        font-weight: bold;
+    & ul { 
         list-style-type: none;
-    }
 
-    & li {
-        text-align: center;
-        margin-bottom: 0.5rem;
-        
-    }
-
-    & li::before {
-        display: flex;
-        justify-content: center;
-        content: var(--svg-dot);
-        filter: brightness(0) saturate(100%) invert(100%) sepia(76%) saturate(891%) hue-rotate(187deg) brightness(117%) contrast(73%);
-
-    }
+        & li {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            list-style-type: none;
+            font-size: 0.9rem;
 
 
-    & a {
-        color: var(--dark-gray-color);
-        text-transform: uppercase;
-        font-weight: 600;
-        text-decoration: none; 
-        transition: var(--simple-transition);
-
-        &:hover {
-            color: var(--main-light-color);
+            
         }
+
+        & li::before {
+            display: flex;
+            justify-content: center;
+            content: var(--svg-dot);
+            filter: brightness(0) saturate(100%) invert(100%) sepia(76%) saturate(891%) hue-rotate(187deg) brightness(117%) contrast(73%);
+
+        }
+
+
+        & a {
+            color: var(--dark-gray-color);
+            text-transform: uppercase;
+            font-weight: 600;
+            text-decoration: none; 
+            transition: var(--simple-transition);
+
+            &:hover {
+                color: var(--main-light-color);
+            }
+        }
+
     }
-
-
 };
 
 
@@ -129,4 +158,101 @@ body {
     &:hover {
         border: 1px solid var(--main-light-color);
     }
+}
+
+
+.container {
+    margin: 0 auto 0 10%;
+
+}
+
+.container-content {
+    max-width: 70%;
+}
+
+
+
+.hero {
+    background-color:hsla(240,18%,22%,1);
+    background-image:
+    radial-gradient(at 11% 94%, hsla(289,24%,36%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
+    radial-gradient(at 36% 60%, hsla(322,45%,41%,1) 0px, transparent 50%),
+    radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
+    radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%);
+    position: relative;
+
+
+    & .container {
+        padding-top: 13rem;
+        max-width: 44rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem
+
+
+
+    }
+
+    & .hello {
+        font-size: clamp(0.9rem, 4vw, 2rem);
+        color: var(--dark-gray-color)
+
+    }
+
+    & .name {
+        font-family: var(--sec-font);
+        font-weight: 400;
+        font-size: clamp(2.1rem, 10vw, 5.6rem);
+        color: var(--main-light-color);
+        line-height: 0.8;
+    }
+
+    & .devo {
+        font-size: clamp(1rem, 6vw, 2.4rem);
+        color: var(--main-light-color);
+
+    }
+
+    & .description {
+        font-size: clamp(0.9rem, 4vw, 1.6rem);
+        color: var(--sec-light-color);
+        font-weight: 300;
+
+    }
+
+    & hr {
+        border: none; /* Remove default hr border */
+        border-top: 2px solid var(--sec-light-color)
+
+    }
+
+}
+
+.svg-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%; /* Make the SVG container span the entire width */
+    overflow: hidden; /* Hide any overflow from the SVG */
+    z-index: 0;
+  }
+
+
+
+
+.button-down {
+    border: 1px solid var(--dark-gray-color);
+    padding: .9rem .2rem;
+    border-radius: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 88vh;
+
+
+}
+
+.about {
+    height: 100vh;
+    background-color: var(--bg-gray);
 }
