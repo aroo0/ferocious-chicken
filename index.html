@@ -6,6 +6,8 @@
     <title>Vite App</title>
     <link rel="stylesheet" href="./style.css">
     <script async src="script.js"></script>
+    <script async src="skills.js"></script>
+
   </head>
   <body>
     <header>
@@ -32,7 +34,7 @@
         <span class="hello">Hello, I am</span>
         <h2 class="name">Arek Dec.</h2>
         <hr>
-        <span class="devo">Frontend Developer. </span>
+        <span class="devo">A Frontend Developer based in Cracow, Poland. </span>
         <span class="description">Deeply passionate about creating immersive UI that captivate users and stay ahead of new design trends.</span>
       </div>
 
@@ -48,9 +50,9 @@
       </section>
       <main>
       <section class="about">
-
         <div class='container container-content'>
           <h2>Get to know,</h2>
+          <div class="grid two-one">
           <div class='column'>
           <h3>My aproach</h3>
           <p>As a Frontend Developer, I am constantly eager to expand my skillset, explore new frameworks, and experiment with cutting-edge technologies to create modern and innovative web experiences.</p>
@@ -58,31 +60,44 @@
           <p>I encourage you to explore some of my projects in the Projects section.</p>
         </div>
         <div class='column'>
+          
           <h3>Skills</h3>
-          <div class="tag-container">
+          <div class="skills-container tag-container">
           </div>
         </div>
       </div>
+      </div>
       </section>
       <section class="projects">
+        <div class='container container-content'>
         <h2>Projects</h2>
-        <article class="container-content">
+        <article>
+          <div class="grid one-one">
+            <div class="image-container">
+                <img src="/Images/retolkienit2.jpg" alt="screen of website view">
+            </div>
           <div class="column">
-            <img src="\Images\retolkienit2.jpg" alt="screen of website view">
-          </div>
-          <div class="column">
-            <h3>reTolkienddit</h3>
+            <h4>reTolkienddit</h4>
             <span class="small-text">Technology</span> 
+            <div class="tech-container tag-container">
+              <div class="tech-tag">HTML</div>
+              <div class="tech-tag">CSS</div>
+              <div class="tech-tag">JS</div>
+              <div class="tech-tag">React</div>
+              <div class="tech-tag">Redux</div>
+            </div>
 
             <span class="small-text">Summary</span> 
             <p>I decided to recreate the Frontend of Boreal Coffee's official Web App as I got attracted to their beautiful UI and it was a great opportunity for me to showcase my frontend skills by rebuilding the UI and it ended up being a great experience for me.</p>
             <p>I used my frontend tools to build the User Interface which works on all types of devices along with the SPA library to make the frontend perform faster.</p>
             <div class="links">
-              <a><button class="primary">View Project <img src="\Icons\IcBaselineLaunch.svg" alt="link"></button></a>
-              <a><button class="secondary">Source Code <img src="\Icons\MdiGithub.svg" alt="link"></button></a>
+              <a><button class="btn primary">View Project <img src="\Icons\IcBaselineLaunch.svg" alt="link"></button></a>
+              <a><button class="btn secondary">Source Code <img src="\Icons\MdiGithub.svg" alt="link"></button></a>
             </div>
           </div>
+        </div>
         </article>
+      </div>
       </section>
       <section class="contact">
         <div class="container">
