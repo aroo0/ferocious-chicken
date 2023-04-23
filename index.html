@@ -11,45 +11,45 @@
   </head>
   <body>
     <header>
-      <h1 class="logo">AD</h1>
+      <a href="#hero" class="nav-link"><h1 class="logo">AD</h1></a>
       <nav class="main-nav">
         <ul>
-          <li>
-            <a href="#about">About me</a>
+          <li >
+            <a href="#about" class="nav-link">About me</a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#projects" class="nav-link">Projects</a>
           </li>
           <li>
-            <a href="#contact">contact</a>
+            <a href="#contact" class="nav-link">contact</a>
           </li>
           <li>
-            <a href="#resume"><div class="resume">My résumé</div></a>
+            <a href="#resume" class="nav-link"><div class="resume">My résumé</div></a>
           </li>
         </ul>
       </nav>
-      <section class="hero">
-        <div class="container">
-        <span class="hello">Hello, I am</span>
-        <h2 class="name">Arek Dec.</h2>
-        <hr>
-        <span class="devo">A Frontend Developer based in Cracow, Poland. </span>
-        <span class="description">Deeply passionate about creating immersive UI that captivate users and stay ahead of new design trends.</span>
-      </div>
-
-      <div class="button-down">      
-        <img src="/Icons/PhCaretDownLight.svg" alt="caret down" class="caret"/>
-      </div>
-      <div class="svg-container">
-        <svg class='responsive-svg' width="100%" height="auto" viewBox="0 0 1920 115" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block; line-height: 0;">
-          <path d="M1358.32 104.895C1695.55 84.3437 2026.99 -56.2324 2077.68 61.158C2124.84 170.358 2095.16 34.4206 2024 158L-66 158L-168.446 172.609C-180.517 182.381 -194.833 185.919 -216 179.39L-168.446 172.609C-122.737 135.606 -109.224 9.21566 122.182 1.58411C558.399 -12.8019 642.64 148.511 1358.32 104.895Z" fill="#F2ECEC"/>
-      
-        </svg>
-      </div>
-      </section>
     </header>
       <main>
-      <section class="about">
+        <section class="hero" id="hero">
+          <div class="container">
+          <span class="hello">Hello, I am</span>
+          <h2 class="name">Arek Dec.</h2>
+          <hr>
+          <span class="devo">A Frontend Developer based in Cracow, Poland. </span>
+          <span class="description">Deeply passionate about creating immersive UI that captivate users and stay ahead of new design trends.</span>
+        </div>
+  
+        <div class="button-down">      
+          <img src="/Icons/PhCaretDownLight.svg" alt="caret down" class="caret"/>
+        </div>
+        <div class="svg-container">
+          <svg class='responsive-svg' width="100%" height="auto" viewBox="0 0 1920 115" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block; line-height: 0;">
+            <path d="M1358.32 104.895C1695.55 84.3437 2026.99 -56.2324 2077.68 61.158C2124.84 170.358 2095.16 34.4206 2024 158L-66 158L-168.446 172.609C-180.517 182.381 -194.833 185.919 -216 179.39L-168.446 172.609C-122.737 135.606 -109.224 9.21566 122.182 1.58411C558.399 -12.8019 642.64 148.511 1358.32 104.895Z" fill="#F2ECEC"/>
+        
+          </svg>
+        </div>
+        </section>
+      <section class="about" id="about">
         <div class='container'>
           <h2>Get to know,</h2>
           <div class="grid two-one">
@@ -68,7 +68,7 @@
       </div>
       </div>
       </section>
-      <section class="projects">
+      <section class="projects" id="projects">
         <div class='container'>
         <h2>Projects</h2>
         </div>
@@ -215,7 +215,7 @@
     </section>
     </main>
       <footer>
-      <section class="contact">
+      <section class="contact" id="contact">
         <div class="box-container">
           <div class="desciption-container">
             <h2>Stay in touch,</h2>
