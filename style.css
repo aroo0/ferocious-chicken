@@ -104,10 +104,6 @@ p {
     color: var(--font-lightgray-color)
 }
 
-.hidden {
-    display: none;
-}
-
 /* Buttons */
 
 .btn {
@@ -175,7 +171,7 @@ p {
     position: fixed;
     top: var(--margin-frame);
     left: var(--margin-frame);
-    z-index: 10;
+    z-index: 20;
     transition: var(--simple-transition);
 
 }
@@ -275,6 +271,13 @@ p {
     
 }
 
+
+/* Misc */
+
+.hidden {
+    display: none;
+}
+
 .container {
     margin: 0 auto 0 10%;
     max-width: 70%;
@@ -323,6 +326,7 @@ p {
     radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
     radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%);
     position: relative;
+    z-index: -1;
 
 
     & .container {
@@ -565,5 +569,10 @@ footer {
         text-shadow: 1px 1px 1px #000
     }
 
+}
+
+.blend-mode  {
+    mix-blend-mode: difference;
+    filter: hue-rotate(90deg);
 }
 

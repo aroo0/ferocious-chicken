@@ -29,7 +29,6 @@ generateYear()
 
 const sectionElements = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-link")
-let currentSection = 'home'
 
 
 
@@ -43,6 +42,7 @@ const debounce = (func, delay) => {
 };
 
 const handleScroll = () => {
+  let currentSection = 'home'
 
   sectionElements.forEach(sectionElement => {
     if (window.scrollY >= (sectionElement.offsetTop - (sectionElement.clientHeight / 10) )) {
@@ -61,3 +61,5 @@ const handleScroll = () => {
 
 // Add event listener with debounced event handler
 window.addEventListener('scroll', debounce(handleScroll, 100)); // Adjust delay as needed
+
+
