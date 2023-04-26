@@ -544,34 +544,21 @@ canvas {
 
 }
 
-footer {
-    
+footer {    
     background-color: #152020;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
-
-/*     
-    .gradient {
-        top: 0;
-        left: 5%;
-        position: absolute;
-        width: 80%;
-        height: 100%;
-        background-image:
-        radial-gradient(at 11% 94%, hsla(289,24%,36%,1) 0px, transparent 50%),
-        radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
-        radial-gradient(at 36% 60%, hsla(322,45%,41%,1) 0px, transparent 50%),
-        radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
-        radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%);
-        z-index: 10;
-        filter: blur(120px);
-    
-    } */
-
+    background-image:
+    linear-gradient(90deg, #152020a4 3%, transparent 30%),
+    linear-gradient(90deg, transparent 50%, #152020 100%),
+    radial-gradient(at 11% 94%, hsla(289,24%,36%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
+    radial-gradient(at 36% 60%, hsla(322,45%,41%,1) 0px, transparent 50%),
+    radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
+    radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%);
 
     .box-container {
         display: flex;
@@ -585,7 +572,6 @@ footer {
         border: 1px
 
     }
-
 
     & form {
         display: flex;
