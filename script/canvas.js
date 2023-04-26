@@ -112,8 +112,8 @@ function generateBalls(regionX, regionY, regionWidth, regionHeight) {
       { radiusX: 60, radiusY: 120, rotation: 20, color: 'rgba(16, 45, 49, 1)', strokeColor: 'rgba(14, 21, 22, 0.6)', count: 14, maxSpeed: 1 },
       { radiusX: 50, radiusY: 120, rotation: 30, color: 'rgba(48, 83, 136, 1)', strokeColor: 'rgba(48, 83, 136, 0.49)', count: 14, maxSpeed: 1 },
       { radiusX: 60, radiusY: 125, rotation: 10, color: 'rgba(111, 63, 112, 1)', strokeColor: 'rgba(111, 63, 112, 0.49)', count: 14, maxSpeed: 1 },
-      { radiusX: 70, radiusY: 120, rotation: 40, color: 'rgba(12, 71, 71, .8)', strokeColor: 'rgba(12, 71, 71, 1)', count: 30, maxSpeed: 1 },
-      { radiusX: 60, radiusY: 120, rotation: 30, color: 'rgba(220, 66, 121, .6)', strokeColor: 'rgba(80, 29, 52, .5)', count: 26, maxSpeed: 1 }
+      { radiusX: 70, radiusY: 120, rotation: 40, color: 'rgba(12, 71, 71, .8)', strokeColor: 'rgba(12, 71, 71, .6)', count: 18, maxSpeed: 1 },
+      { radiusX: 60, radiusY: 120, rotation: 30, color: 'rgba(220, 66, 121, .5)', strokeColor: 'rgba(80, 29, 52, .5)', count: 18, maxSpeed: 1 }
     ]
   ];
 
