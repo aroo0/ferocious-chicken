@@ -310,7 +310,7 @@ canvas {
 .social-nav {
     position: fixed;
     z-index: 10;
-    bottom: calc(2.5 * var(--margin-frame));
+    bottom: calc(1.5 * var(--margin-frame));
     left: calc(var(--margin-frame) + 20px);
 
     & ul {
@@ -677,7 +677,7 @@ footer {
     .footer-text {
         color: var(--main-light-color);
         letter-spacing: 1px;
-        font-size: clamp(.6rem, .8vw, 0.8rem);
+        font-size: clamp(.6rem, 1.3vw, 0.8rem);
         font-weight: 300;
         text-shadow: 1px 1px 1px #000;
         z-index: 10;
