@@ -49,7 +49,7 @@ class Ball {
     this.color = color;
     this.strokeColor = strokeColor
     this.deceleration = 0.001; // Deceleration factor for slowing down over time
-    this.minDistance = 300; // Minimum distance between ball and mouse cursor
+    this.minDistance = 350; // Minimum distance between ball and mouse cursor
 
   }
 
