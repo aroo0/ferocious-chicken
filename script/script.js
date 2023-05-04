@@ -63,3 +63,26 @@ const handleScroll = () => {
 window.addEventListener('scroll', debounce(handleScroll, 100)); // Adjust delay as needed
 
 
+
+
+//  Hamburger navigation 
+
+const hamburgerMenu = document.querySelector('.hamburger-menu') 
+const mainNav = document.querySelector('.main-nav') 
+const socialNav = document.querySelector('.social-nav')
+
+hamburgerMenu.addEventListener('click', () => {
+  hamburgerMenu.classList.toggle('is-open')
+  mainNav.classList.toggle('is-open')
+  socialNav.classList.toggle('is-open')
+
+})
+
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburgerMenu.classList.remove('is-open')
+    mainNav.classList.remove('is-open');
+    socialNav.classList.remove('is-open')
+  })
+})

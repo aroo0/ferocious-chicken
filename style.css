@@ -47,7 +47,7 @@
 
     /* Margins */
 
-    --margin-frame: clamp(1rem, 2vw, 2rem)
+    --margin-frame: clamp(1.2rem, 2vw, 2rem)
 
 
 }
@@ -217,7 +217,7 @@ canvas {
     position: fixed;
     top: var(--margin-frame);
     left: var(--margin-frame);
-    z-index: 20;
+    z-index: 100;
     transition: var(--simple-transition);
 
     &:hover {
@@ -231,12 +231,18 @@ canvas {
 /* Navigation */
 
 .main-nav {
-    position: fixed;
-    top: var(--margin-frame);;
-    right: 3rem;
-    z-index: 10;
+
+    .nav-links {
+        position: fixed;
+        top: var(--margin-frame);
+        right: calc(var(--margin-frame) + 1rem);
+        display: block;
+        z-index: 10;
+    }
+
 
     & ul { 
+
         list-style-type: none;
 
         & li {
@@ -245,18 +251,14 @@ canvas {
             margin: 0.7rem 0;
             list-style-type: none;
             font-size: 0.9rem;
-            
-
 
             &:nth-last-child(1) {
-                margin: 0;
+                margin: 0 auto;
                 padding: 0;
             }
 
             }
         }
-
-
 
         & li::before {
             font-weight: 300;
@@ -266,7 +268,6 @@ canvas {
             justify-content: center;
             content: '\26AC';
             color: var(--dark-gray-color)
-
         }
 
         & a {
@@ -277,39 +278,71 @@ canvas {
             text-decoration: none; 
             transition: var(--simple-transition);
 
-
             &.active {
                 color: var(--main-light-color);
                 border: 1px solid var(--main-light-color);
                 border-radius: 10rem;
-
-                
             }
-
 
             &:hover {
                 color: var(--main-light-color);
             }
         }
 
-        .resume {
+        & .resume {
             margin: 0;
             border: 1px solid var(--dark-gray-color);
-            padding: .8rem 1.4rem;
+            padding: .8em 1.4em;
             transition: var(--simple-transition);
+            transition-property: background-color;
         
             &:hover {
                 border: 1px solid var(--main-light-color);
             }
-        }
+        };
+
+    &.is-open {
+        position: fixed;
+        display: block;
+        background-color: var(--main-light-color);
+        z-index: 90;
+        transition: all .5s ease-in-out;
+
     
+        & .nav-links {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+        }
+
+        & a {
+            font-weight: 400;
+
+            &.active {
+                color: var(--main-light-color);
+                font-weight: 600;
+                border: none;
+            }
+        }
+
+        & li {
+            font-size: 1rem;
+            margin: 0.7rem auto;
+            text-align: center;
+            max-width: fit-content;
+
+            &:before {
+                content: '';
+
+                }
+            }
+        }
     };
-
-
 
 .social-nav {
     position: fixed;
-    z-index: 10;
+    z-index: 100;
     bottom: calc(1.5 * var(--margin-frame));
     left: calc(var(--margin-frame) + 20px);
 
@@ -318,22 +351,112 @@ canvas {
         display: flex;
         flex-direction: column;
         gap: 1rem
-
     }
 
     & li svg {
         color: var(--dark-gray-color);
         transition: var(--simple-transition);
 
-
-
-
         &:hover {
             color: var(--main-light-color);
         }
     }
-    
+
+    &.is-open {
+        display: block;
+        left:auto;
+        right: calc(var(--margin-frame));
+
+        & ul {
+            display: flex;
+            flex-direction: row;
+        }
+    }
 }
+
+.hamburger-menu {
+    position: fixed;
+    top: calc(var(--margin-frame) + 5px);
+    right: var(--margin-frame);
+    z-index: 100;
+    display: none;
+    cursor: pointer;
+    width: 35px;
+    height: 30px;
+    pointer-events: all;
+
+    .bar,
+    .bar:before,
+    .bar:after {
+        content: '';
+        position: absolute;
+        display: block;
+        background-color: var(--dark-gray-color);
+        height: 2px;
+        width: 100%;
+        border-radius: 3rem;
+        transition: all .3s ease-in-out;
+    }
+
+    .bar {
+        top: 0rem;
+    }
+
+    .bar:before {
+        top: 13px;
+        width: 80%;
+        right: 0;
+
+    }
+    .bar:after {
+        top: 26px;
+    }
+
+    &.is-open {
+
+        .bar {
+          transform: rotate(45deg);
+          top: 13px;
+
+          &:before {
+            width: 0%;
+          }
+
+          &:after {
+            top: 0;
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+
+@media (max-width: 1150px) {
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        min-height: 100vh;
+
+        &.is-open {
+            background-color: var(--bg-dark);
+        }
+    }
+
+    .social-nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+
+
+
+
+
+}
+
 
 
 /* Misc */
@@ -466,7 +589,7 @@ canvas {
 
 .svg-container {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     width: 100%; /* Make the SVG container span the entire width */
     overflow: hidden; /* Hide any overflow from the SVG */
     z-index: 3;
