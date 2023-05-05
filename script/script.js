@@ -71,11 +71,14 @@ const hamburgerMenu = document.querySelector('.hamburger-menu')
 const mainNav = document.querySelector('.main-nav') 
 const socialNav = document.querySelector('.social-nav')
 const links = document.querySelector('.nav-links')
+const body = document.body;
+
 
 hamburgerMenu.addEventListener('click', () => {
   hamburgerMenu.classList.toggle('is-open')
   mainNav.classList.toggle('is-open')
   socialNav.classList.toggle('is-open')
+  body.classList.toggle('overflow')
 })
 
 
@@ -84,13 +87,13 @@ navLinks.forEach(link => {
     hamburgerMenu.classList.remove('is-open')
     mainNav.classList.remove('is-open');
     socialNav.classList.remove('is-open')
+    body.classList.remove('overflow')
   })
 })
 
 
 // Scroll-Activated Sticky Navigation
 
-const body = document.body;
 let lastScroll = 0;
 
 function handleScrollActivatedNav() {

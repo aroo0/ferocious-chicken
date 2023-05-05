@@ -211,7 +211,7 @@ canvas {
 header {
     position: inherit;
     z-index: 80;
-    background-color: var(--bg-dark);
+    /* background-color: var(--bg-dark); */
     transition: var(--simple-transition);
 
 
@@ -225,6 +225,7 @@ header {
 }
 
 .scroll-up header {
+        background-color: var(--bg-dark);
 
 }
 
@@ -314,7 +315,6 @@ header {
             border: 1px solid var(--dark-gray-color);
             padding: .8em 1.4em;
             transition: var(--simple-transition);
-            transition-property: background-color;
         
             &:hover {
                 border: 1px solid var(--main-light-color);
@@ -466,6 +466,8 @@ header {
         display: none;
         width: 100%;
         min-height: 100vh;
+        animation: fadeIn ease-in-out .3s;
+        touch-action: none;
 
     }
 
@@ -481,12 +483,21 @@ header {
 
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
 
 
 /* Misc */
 
 .hidden {
     display: none;
+}
+
+.overflow {
+    overflow: hidden;
 }
 
 .container {
