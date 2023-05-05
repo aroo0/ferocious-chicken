@@ -41,7 +41,7 @@ const debounce = (func, delay) => {
   };
 };
 
-const handleScroll = () => {
+const handleActiveOnScroll = () => {
   let currentSection = 'home'
 
   sectionElements.forEach(sectionElement => {
@@ -60,7 +60,7 @@ const handleScroll = () => {
 
 
 // Add event listener with debounced event handler
-window.addEventListener('scroll', debounce(handleScroll, 100)); // Adjust delay as needed
+window.addEventListener('scroll', debounce(handleActiveOnScroll, 100)); // Adjust delay as needed
 
 
 
@@ -76,11 +76,6 @@ hamburgerMenu.addEventListener('click', () => {
   hamburgerMenu.classList.toggle('is-open')
   mainNav.classList.toggle('is-open')
   socialNav.classList.toggle('is-open')
-
-
-
-
-
 })
 
 
@@ -95,32 +90,38 @@ navLinks.forEach(link => {
 
 // Scroll-Activated Sticky Navigation
 
-const body = document.body
+const body = document.body;
+let lastScroll = 0;
 
-let lastScroll = 0 
-window.addEventListener('scroll', () => {
-  const currentScroll = window.scrollY
-
+function handleScrollActivatedNav() {
+  const currentScroll = window.scrollY;
 
   if (currentScroll <= 0) {
-    body.classList.remove('scroll-up')
+    body.classList.remove('scroll-up');
   }
 
   if (currentScroll > lastScroll && !body.classList.contains('scroll-down')) {
-    body.classList.remove('scroll-up')
-    body.classList.add('scroll-down')
-
+    body.classList.remove('scroll-up');
+    body.classList.add('scroll-down');
   }
 
   if (currentScroll < lastScroll && body.classList.contains('scroll-down')) {
-    body.classList.remove('scroll-down')
-    body.classList.add('scroll-up')
-
+    body.classList.remove('scroll-down');
+    body.classList.add('scroll-up');
   }
-  
-  
-  
-  lastScroll = currentScroll
 
+  lastScroll = currentScroll;
+}
 
-})
+function handleResize() {
+  const windowWidth = window.innerWidth;
+
+  if (windowWidth > 1150) {
+    window.removeEventListener('scroll', handleScrollActivatedNav);
+  } else {
+    window.addEventListener('scroll', handleScrollActivatedNav);
+  }
+}
+
+handleResize();
+window.addEventListener('resize', handleResize);

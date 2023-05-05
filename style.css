@@ -105,12 +105,12 @@ h3 {
 h4 {
     font-family: var(--sec-font);
     color: var(--main-dark-color);
-    font-size: clamp(1rem, 2vw, 2.25rem);
+    font-size: clamp(1.2rem, 2vw, 2.25rem);
     font-weight: 400;
 }
 
 p {
-    font-size: clamp(.9rem, 2vw, 1.25rem);
+    font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.4;
     color: var(--font-gray-color);
     max-width: 60ch;
@@ -209,33 +209,24 @@ canvas {
 /* Structure  */
 
 header {
-    position: fixed;
-    top: 0;
-    width: 100%;
+    position: inherit;
     z-index: 80;
     background-color: var(--bg-dark);
-    height: 60px;
     transition: var(--simple-transition);
 
 
 }
 
-
 /* Scroll header behavor */
-
 
 .scroll-down header {
     transform: translate3d(0, -100%, 0);
-
 
 }
 
 .scroll-up header {
 
-
 }
-
-
 
 .logo {
     color: var(--dark-gray-color);
@@ -464,6 +455,13 @@ header {
 
 @media (max-width: 1150px) {
 
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 60px;
+    }
+
     .main-nav {
         display: none;
         width: 100%;
@@ -496,17 +494,27 @@ header {
     max-width: 70%;
 }
 
+@media (max-width: 1150px) {
+    .container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+
+
 .grid {
-    display: grid;
+    display: flex;
+    margin-top: 1rem;
 
     &.two-one {
-        padding-top: clamp(1rem, 3vw, 2rem);
         grid-template-columns: 2fr 1.5fr;
-        gap: clamp(3rem, 8vw, 8rem);
+        gap: clamp(2rem, 8vw, 8rem);
     }
 
+
+
     &.one-one {
-        grid-template-columns: 1fr 1fr;
         gap: clamp(2rem, 1vw, 3rem);
     }
 
@@ -516,6 +524,25 @@ header {
 
     &.even  > * {
         direction: ltr; /* Restore the original direction of child elements */
+      }
+
+    & .column {
+        flex: 1;
+    }
+
+
+    @media (max-width: 700px) {
+
+        &  {
+            flex-direction: column;
+
+            &.one-one {
+                flex-direction: column-reverse;
+            }
+        }
+        
+
+        
       }
 }
 
@@ -531,12 +558,6 @@ header {
 }
 
 .hero {
-    /* background-image:
-    radial-gradient(at 11% 94%, hsla(289,24%,36%,1) 0px, transparent 50%),
-    radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
-    radial-gradient(at 36% 60%, hsla(322,45%,41%,1) 0px, transparent 50%),
-    radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
-    radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%); */
     background-color: #152020;
     position: relative;
     overflow: hidden;
@@ -555,12 +576,7 @@ header {
         z-index: 0;
         mix-blend-mode: soft-light;
         filter: brightness(80%);
-
-        
-
-
     }
-
 
     & .container {
         padding-top: 13rem;
@@ -572,8 +588,12 @@ header {
         filter: hue-rotate(50deg);
         z-index: 3;
 
-
-
+    }
+    
+    @media (max-width: 1150px) {
+        .container {
+            max-width: 90%;
+        }
     }
 
     & .hello {
@@ -607,7 +627,9 @@ header {
 
     & hr {
         border: none; /* Remove default hr border */
-        border-top: 2px solid var(--sec-light-color)
+        border-top: 2px solid var(--sec-light-color);
+        max-width: 50rem;
+        
 
     }
 
@@ -630,6 +652,7 @@ header {
     border-radius: 1rem;
     position: absolute;
     left: 50%;
+    transform: translateX(-50%);
     top: 88vh;
     transition: var(--simple-transition);
 
@@ -670,11 +693,14 @@ header {
 /* Backgrounds */ 
 
 .projects {
-    padding-top: clamp(.8rem, 4vw, 4rem);
     padding-bottom: 0;
     background-color: var(--main-light-color);
     display: flex;
     flex-direction: column;
+
+    & h2 {
+        padding-bottom: max(.9rem, min(3vw, 2rem));
+    }
 
     .black {
         background-color: var(--bg-dark);
@@ -700,15 +726,15 @@ header {
         background-color: var(--main-light-color);
     }
 
-
     .project {
         padding-top: clamp(1.5rem, 6vw, 9rem);
         padding-bottom: clamp(1rem, 9vw, 16rem);
     }
 
     .project-first {
-        padding-top: clamp(1.5rem, 4vw, 5rem);
+        padding-top: clamp(.9rem, 3.8vw, 6rem);
         padding-bottom: clamp(1.5rem, 10vw, 17rem);
+        min-height: 100vh;
     }
     
 
@@ -742,20 +768,18 @@ header {
 
     }
 
-
     .tech-tag::before {
         content: '\2713';
         margin-right: 5px;
     }
 }
-
 }
 
 footer {    
     background-color: #152020;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     min-height: 100vh;
     background-image:
@@ -788,7 +812,7 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        margin-top: 2rem;
+        margin: 2rem 2vh;
         background-color: var(--main-light-color);
         border-radius: clamp(1.5rem, 2.4vw, 2.5rem);
         padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 4vw, 4rem) clamp(3rem, 6vw, 6rem);
@@ -801,7 +825,7 @@ footer {
     & form {
         display: flex;
         flex-direction: column;
-        gap: 1.2rem
+        gap: clamp(.8rem, 1.8vh, 2rem);
     }
 
     & input, & textarea {
@@ -820,9 +844,6 @@ footer {
         min-height: 12rem;
      }
 
-
-
-
     .footer-text {
         color: var(--main-light-color);
         letter-spacing: 1px;
@@ -831,13 +852,11 @@ footer {
         text-shadow: 1px 1px 1px #000;
         z-index: 10;
 
-
         & a {
             color: var(--main-light-color)
 
         }
     }
-
 }
 
 .blend-mode  {
