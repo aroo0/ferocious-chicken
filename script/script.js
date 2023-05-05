@@ -6,7 +6,7 @@ const yearContainer = document.querySelector('#year-container')
 // Update the height of the hero element based on the SVG's current height
 function updateHeroHeight() {
   const svgHeight = svgElement.getBoundingClientRect().height;
-  heroElement.style.height = `calc(100vh + ${svgHeight}px)`;
+  heroElement.style.minHeight = `calc(100vh + ${svgHeight}px)`;
 }
 
 // Call the updateHeroHeight function initially and on window resize

@@ -229,6 +229,13 @@ header {
 
 }
 
+.container {
+    margin: 0 auto 0 10%;
+    max-width: 70%;
+}
+
+/* Navigation */
+
 .logo {
     color: var(--dark-gray-color);
     font-size: clamp(0.7rem, 1vw, 1.2rem);
@@ -245,13 +252,8 @@ header {
     &:hover {
         color: var(--main-light-color);
         border: 2px solid var(--main-light-color);
-
+    }
 }
-
-}
-
-/* Navigation */
-
 
 .main-nav {
 
@@ -500,10 +502,10 @@ header {
     overflow: hidden;
 }
 
-.container {
-    margin: 0 auto 0 10%;
-    max-width: 70%;
+.blend-mode  {
+    mix-blend-mode: difference;
 }
+
 
 @media (max-width: 1150px) {
     .container {
@@ -679,7 +681,6 @@ header {
     background-color: var(--bg-gray);
     padding-top: clamp(.8rem, 9vw, 9rem);
     padding-bottom: clamp(2rem, 17vw, 20rem);
-    min-height: 100vh;
 
     .skills-container {
         gap: 1rem
@@ -745,9 +746,9 @@ header {
     .project-first {
         padding-top: clamp(.9rem, 3.8vw, 6rem);
         padding-bottom: clamp(1.5rem, 10vw, 17rem);
-        min-height: 100vh;
     }
     
+
 
     & img {
         max-width: 100%;
@@ -784,6 +785,13 @@ header {
         margin-right: 5px;
     }
 }
+    /* @media (max-width: 700px) {
+
+        & .image-container {
+            display: none;
+
+        }
+} */
 }
 
 footer {    
@@ -870,8 +878,6 @@ footer {
     }
 }
 
-.blend-mode  {
-    mix-blend-mode: difference;
-}
+
 
 
