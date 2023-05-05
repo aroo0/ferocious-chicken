@@ -42,12 +42,13 @@
     /* Transitions */
     --simple-transition: all 0.2s ease-out;
     --button-transition: all 0.1s ease-in-out;
+    --menu-transition: all .3s ease-in-out;
 
 
 
     /* Margins */
 
-    --margin-frame: clamp(1.2rem, 2vw, 2rem)
+    --margin-frame: clamp(.8rem, 1.4vw, 2.4rem)
 
 
 }
@@ -207,12 +208,41 @@ canvas {
 
 /* Structure  */
 
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 80;
+    background-color: var(--bg-dark);
+    height: 60px;
+    transition: var(--simple-transition);
+
+
+}
+
+
+/* Scroll header behavor */
+
+
+.scroll-down header {
+    transform: translate3d(0, -100%, 0);
+
+
+}
+
+.scroll-up header {
+
+
+}
+
+
+
 .logo {
     color: var(--dark-gray-color);
-    font-size: clamp(0.9rem, 1vw, 1.2rem);
+    font-size: clamp(0.7rem, 1vw, 1.2rem);
     text-transform: uppercase;
     padding: 0.5rem;
-    border-radius: clamp(0.9rem, 1vw, 1.1rem);
+    border-radius: clamp(0.8rem, 1vw, 1.1rem);
     border: 2px solid var(--dark-gray-color);
     position: fixed;
     top: var(--margin-frame);
@@ -230,6 +260,7 @@ canvas {
 
 /* Navigation */
 
+
 .main-nav {
 
     .nav-links {
@@ -239,7 +270,6 @@ canvas {
         display: block;
         z-index: 10;
     }
-
 
     & ul { 
 
@@ -256,9 +286,8 @@ canvas {
                 margin: 0 auto;
                 padding: 0;
             }
-
-            }
         }
+    }
 
         & li::before {
             font-weight: 300;
@@ -304,16 +333,16 @@ canvas {
     &.is-open {
         position: fixed;
         display: block;
-        background-color: var(--main-light-color);
         z-index: 90;
-        transition: all .5s ease-in-out;
+        background-color: var(--bg-dark);
 
-    
+
         & .nav-links {
             position: absolute;
             top: 40%;
             left: 50%;
             transform: translate(-50%, -60%);
+
         }
 
         & a {
@@ -366,6 +395,8 @@ canvas {
         display: block;
         left:auto;
         right: calc(var(--margin-frame));
+        transition: var(--menu-transition);
+        z-index: 110;
 
         & ul {
             display: flex;
@@ -381,8 +412,8 @@ canvas {
     z-index: 100;
     display: none;
     cursor: pointer;
-    width: 35px;
-    height: 30px;
+    width: 34px;
+    height: 26px;
     pointer-events: all;
 
     .bar,
@@ -403,13 +434,13 @@ canvas {
     }
 
     .bar:before {
-        top: 13px;
+        top: 12px;
         width: 80%;
         right: 0;
 
     }
     .bar:after {
-        top: 26px;
+        top: 24px;
     }
 
     &.is-open {
@@ -429,6 +460,7 @@ canvas {
         }
       }
     }
+      
 
 @media (max-width: 1150px) {
 
@@ -437,10 +469,9 @@ canvas {
         width: 100%;
         min-height: 100vh;
 
-        &.is-open {
-            background-color: var(--bg-dark);
-        }
     }
+
+
 
     .social-nav {
         display: none;
@@ -449,11 +480,6 @@ canvas {
     .hamburger-menu {
         display: block;
     }
-
-
-
-
-
 
 }
 

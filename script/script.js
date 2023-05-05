@@ -70,11 +70,16 @@ window.addEventListener('scroll', debounce(handleScroll, 100)); // Adjust delay 
 const hamburgerMenu = document.querySelector('.hamburger-menu') 
 const mainNav = document.querySelector('.main-nav') 
 const socialNav = document.querySelector('.social-nav')
+const links = document.querySelector('.nav-links')
 
 hamburgerMenu.addEventListener('click', () => {
   hamburgerMenu.classList.toggle('is-open')
   mainNav.classList.toggle('is-open')
   socialNav.classList.toggle('is-open')
+
+
+
+
 
 })
 
@@ -85,4 +90,37 @@ navLinks.forEach(link => {
     mainNav.classList.remove('is-open');
     socialNav.classList.remove('is-open')
   })
+})
+
+
+// Scroll-Activated Sticky Navigation
+
+const body = document.body
+
+let lastScroll = 0 
+window.addEventListener('scroll', () => {
+  const currentScroll = window.scrollY
+
+
+  if (currentScroll <= 0) {
+    body.classList.remove('scroll-up')
+  }
+
+  if (currentScroll > lastScroll && !body.classList.contains('scroll-down')) {
+    body.classList.remove('scroll-up')
+    body.classList.add('scroll-down')
+
+  }
+
+  if (currentScroll < lastScroll && body.classList.contains('scroll-down')) {
+    body.classList.remove('scroll-down')
+    body.classList.add('scroll-up')
+
+  }
+  
+  
+  
+  lastScroll = currentScroll
+
+
 })
