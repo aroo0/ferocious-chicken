@@ -153,6 +153,11 @@ canvas {
 
 /* Buttons */
 
+a:has(.btn) {
+    text-decoration: none;
+
+}
+
 .btn {
     font-size: clamp(.8rem, 2vw, 1rem);
     font-family: var(--main-font);
@@ -164,7 +169,7 @@ canvas {
     align-items: center;
     gap: 0.4rem;
     transition: var(--button-transition);
-    cursor: pointer;
+    cursor: pointer;    
 
     &.primary {
         background-color: var(--main-dark-color);
@@ -544,7 +549,7 @@ header {
     }
 
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
 
         &  {
             flex-direction: column;
@@ -749,6 +754,10 @@ header {
     }
     
 
+    .image-container {
+        align-self: flex-start;
+    }
+
 
     & img {
         max-width: 100%;
@@ -757,8 +766,10 @@ header {
     }
 
     .column {
-        display: flex;
+        display: grid;
         flex-direction: column;
+        justify-items: start;
+        align-items: center;
         gap: 1.5rem;
 
     .links {
@@ -785,13 +796,43 @@ header {
         margin-right: 5px;
     }
 }
-    /* @media (max-width: 700px) {
+    @media (max-width: 700px) {
 
         & .image-container {
             display: none;
 
         }
-} */
+}
+}
+
+.small-project {
+    border-radius: clamp(1.5rem, 2.4vw, 2.5rem);
+    padding: clamp(2rem, 3vw, 3rem) clamp(1.5rem, 4vw, 3rem) clamp(3rem, 6vw, 6rem);
+
+    & h4 {
+        font-size: clamp(1.2rem, 1.5vw, 2rem);
+
+    }
+
+
+
+    & .head {
+        display: grid;
+        grid-template-columns: .1fr 1fr;
+        gap: .4rem;
+        align-items: center;
+
+
+
+
+        & svg {
+            color: var(--sec-light-color);
+            width: clamp(3rem, 4vw, 4rem);
+            height: 100%;
+
+        }
+
+    }
 }
 
 footer {    

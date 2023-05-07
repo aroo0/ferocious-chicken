@@ -8,12 +8,27 @@ const programmingLanguages = [
   "GitHub",
 ];
 
-const webFrameworks = ["Node", "React", "Redux", "Vite", "Astro"];
-const designTools = ["Figma", "Photoshop"];
+const webFrameworks = [
+  "API", 
+  "Node", 
+  "React", 
+  "Redux", 
+  "Vite", 
+  "Astro"
+];
 
-const allItems = [...programmingLanguages, ...webFrameworks, ...designTools];
+const designTools = [
+  "Figma", 
+  "Photoshop"
+];
+
+const allItems = [
+  ...programmingLanguages, 
+  ...webFrameworks, 
+  ...designTools
+];
+
 const skillsContainer = document.querySelector(".skills-container");
-
 
 // Function to generate pastel colors
 function generatePastelColor() {
