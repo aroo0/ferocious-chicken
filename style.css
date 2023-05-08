@@ -144,27 +144,31 @@ a {
 .scroll-animated {
     opacity: 0;
     transform: translateY(50px);
-
     filter: blur(5px);
     transition-property: opacity transform filter;
     transition-duration: 1s;
     transition-timing-function: easy;
     transition-delay: 100ms;
 
+
+    @media (max-width: 400px) {
+        & {
+            opacity: 1;
+            transform: translateX(0);
+            filter: blur(0);
+        }
+        
+    }
+
     &.show {
         opacity: 1;
         transform: translateX(0);
-
         filter: blur(0);
     }
 }
 
 
-@media (prefers-reduced-motion: no-preference) {
-    .scroll-animated {
-      transition: all 1s;
-    }
-  }
+
 /* Hero Gradient */
 
 canvas {
@@ -179,6 +183,24 @@ canvas {
     background-image:     
     linear-gradient(90deg, #152020a4 3%, transparent 30%),
     linear-gradient(90deg, transparent 50%, #152020 100%);
+
+    @media (max-width: 600px) {
+
+
+        & {
+            background-image:
+            linear-gradient(90deg, #152020a4 3%, transparent 30%),
+            linear-gradient(90deg, transparent 50%, #152020 100%),
+            radial-gradient(at 11% 94%, hsla(289,24%,36%,1) 0px, transparent 50%),
+            radial-gradient(at 0% 0%, hsla(175,11%,20%,1) 0px, transparent 50%),
+            radial-gradient(at 36% 60%, hsla(322,45%,41%,1) 0px, transparent 50%),
+            radial-gradient(at 91% 94%, hsla(173,60%,11%,1) 0px, transparent 50%),
+            radial-gradient(at 79% 27%, hsla(234,44%,36%,1) 0px, transparent 50%);
+        }
+        filter: blur(60px);
+
+        
+    }
 
 }
 

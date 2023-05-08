@@ -11,14 +11,20 @@ let regionX = (canvas.width - regionWidth) / 2;
 let regionY = (canvas.height - regionHeight) / 2;
 
 window.addEventListener('resize', function() {
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-    regionWidth = canvas.width;
-    regionHeight = canvas.height;
-    regionX = (canvas.width - regionWidth) / 2;
-    regionY = (canvas.height - regionHeight) / 2;
-    balls = []
-    generateBalls(regionX, regionY, regionWidth, regionHeight)
+
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
+  regionWidth = canvas.width;
+  regionHeight = canvas.height;
+  regionX = (canvas.width - regionWidth) / 2;
+  regionY = (canvas.height - regionHeight) / 2;
+  balls = []
+
+  if (canvas.width >= 600) { // Check screen width before generating balls
+    generateBalls(regionX, regionY, regionWidth, regionHeight);
+
+}
+
 
 })
 
@@ -142,8 +148,10 @@ function animate() {
   
   requestAnimationFrame(animate);
 }
+if (canvas.width >= 600) { // Check screen width before generating balls
+  generateBalls(regionX, regionY, regionWidth, regionHeight);
+  animate();
+}
 
-generateBalls(regionX, regionY, regionWidth, regionHeight)
-animate();
 
 

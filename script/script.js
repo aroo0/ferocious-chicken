@@ -149,3 +149,9 @@ animatedScrollElements.forEach(el => {
   observer.observe(el)
 
 })
+
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  elements.forEach((element) => {
+    element.classList.remove("scroll-animated");
+  });
+}
