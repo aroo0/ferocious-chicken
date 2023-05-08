@@ -1,27 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-
+/* Resets  */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     }
+    
+body {
+    margin: 0;
+}
+
 
 :root {
-
-    /* General */
-    scroll-behavior: smooth;
-    /* Var */
-
-    --svg-dot: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 256 256'%3E%3Cpath fill='%23888888' d='M128 98a30 30 0 1 0 30 30a30 30 0 0 0-30-30Zm0 48a18 18 0 1 1 18-18a18 18 0 0 1-18 18Z'/%3E%3C/svg%3E");
-
+    
     /* Typography */
 
     --main-font: 'Montserrat', sans-serif;
     --sec-font: 'Michroma', sans-serif;
-
-    font-family: var(--main-font);
     
     /* Colors */
 
@@ -38,55 +35,30 @@
     --accent-color: #505da7;
     --hover-color: #414b68;
 
-
     /* Transitions */
+
     --simple-transition: all 0.2s ease-out;
     --button-transition: all 0.1s ease-in-out;
     --menu-transition: all .3s ease-in-out;
+    --hover-transition: color 0.2s ease, border 0.2s ease;
+    --scroll-transition: opacity .5s ease 100ms, transform .5s ease 100ms, filter 1s ease 100ms;
 
 
 
     /* Margins */
 
-    --margin-frame: clamp(.8rem, 1.4vw, 2.4rem)
+    --margin-frame: clamp(.8rem, 1.4vw, 2.4rem);
 
+      /* General */
+
+      scroll-behavior: smooth;
+      font-family: var(--main-font);
+      
 
 }
 
+/* General */
 
-/* Aniamations */
-
-
-@keyframes moveUpDown {
-    /* Define the keyframes for the animation */
-    from {
-      transform: translateY(-5px); /* Start position: no translation */
-      opacity: 1
-    }
-    to {
-      transform: translateY(15px); /* End position: translate vertically by 10 pixels */
-      opacity: 0;
-    }
-  }
-
-
-  @keyframes changeBgColor {
-    0% {
-        background-color: #285f50;
-    }
-    50% {
-        background-color: #283d5f;
-      }
-      100% {
-        background-color: #3d3271;
-      }
-    
-  }
-
-
-body {
-    margin: 0;
-}
 
 h2 {
     font-family: var(--sec-font);
@@ -126,11 +98,74 @@ a {
     &:hover {
         text-decoration: none;
     }
-
-
 }
 
 
+
+/* Aniamations */
+
+@keyframes moveUpDown {
+    /* Define the keyframes for the animation */
+    from {
+      transform: translateY(-5px); /* Start position: no translation */
+      opacity: 1
+    }
+    to {
+      transform: translateY(15px); /* End position: translate vertically by 10 pixels */
+      opacity: 0;
+    }
+  }
+
+@keyframes changeBgColor {
+0% {
+    background-color: #285f50;
+}
+50% {
+    background-color: #283d5f;
+    }
+    100% {
+    background-color: #3d3271;
+    }
+
+}
+
+@keyframes fadeIn {
+0% { 
+    opacity: 0; 
+    filter: blur(2px);
+}
+
+100% { opacity: 1; }
+}
+
+
+/* Scroll Observer Animations */
+
+.scroll-animated {
+    opacity: 0;
+    transform: translateY(50px);
+
+    filter: blur(5px);
+    transition-property: opacity transform filter;
+    transition-duration: 1s;
+    transition-timing-function: easy;
+    transition-delay: 100ms;
+
+    &.show {
+        opacity: 1;
+        transform: translateX(0);
+
+        filter: blur(0);
+    }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+    .scroll-animated {
+      transition: all 1s;
+    }
+  }
+/* Hero Gradient */
 
 canvas {
     width: 80%;
@@ -145,17 +180,13 @@ canvas {
     linear-gradient(90deg, #152020a4 3%, transparent 30%),
     linear-gradient(90deg, transparent 50%, #152020 100%);
 
-
 }
-
-
 
 
 /* Buttons */
 
 a:has(.btn) {
     text-decoration: none;
-
 }
 
 .btn {
@@ -178,10 +209,7 @@ a:has(.btn) {
 
         &:hover {
             background-color: var(--hover-color);
-
         }
-
-    
 
         &.form {
             width: fit-content;
@@ -195,8 +223,8 @@ a:has(.btn) {
             & svg {
                 width: clamp(1rem, 1.2vw, 1.3rem)
             }
-
-    } }
+        } 
+    }
 
     &.secondary {
         color: var(--main-dark-color);
@@ -206,8 +234,7 @@ a:has(.btn) {
         &:hover {
             background-color: var(--sec-light-color);
 
-    }
-
+        }
     }
 }
 
@@ -216,10 +243,7 @@ a:has(.btn) {
 header {
     position: inherit;
     z-index: 80;
-    /* background-color: var(--bg-dark); */
     transition: var(--simple-transition);
-
-
 }
 
 /* Scroll header behavor */
@@ -239,6 +263,59 @@ header {
     max-width: 70%;
 }
 
+
+.grid {
+    display: flex;
+    margin-top: 1rem;
+
+    &.two-one {
+        grid-template-columns: 2fr 1.5fr;
+        gap: clamp(2rem, 8vw, 8rem);
+    }
+
+
+
+    &.one-one {
+        gap: clamp(2rem, 1vw, 3rem);
+    }
+
+    &.even {
+        direction: rtl; /* Reverse the order of items within the grid item */
+      }
+
+    &.even  > * {
+        direction: ltr; /* Restore the original direction of child elements */
+      }
+
+    & .column {
+        flex: 1;
+    }
+
+
+    @media (max-width: 800px) {
+
+        &  {
+            flex-direction: column;
+
+            &.one-one {
+                flex-direction: column-reverse;
+            }
+        }
+      }
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
 /* Navigation */
 
 .logo {
@@ -252,7 +329,7 @@ header {
     top: var(--margin-frame);
     left: var(--margin-frame);
     z-index: 100;
-    transition: var(--simple-transition);
+    transition: var(--hover-transition), var(--scroll-transition);
 
     &:hover {
         color: var(--main-light-color);
@@ -295,7 +372,9 @@ header {
             padding: .4rem 0 1rem;
             justify-content: center;
             content: '\26AC';
-            color: var(--dark-gray-color)
+            color: var(--dark-gray-color);
+            transition: var(--hover-transition), var(--scroll-transition);
+            
         }
 
         & a {
@@ -304,7 +383,7 @@ header {
             padding: .6rem 1.3rem;
             font-weight: 600;
             text-decoration: none; 
-            transition: var(--simple-transition);
+            transition: var(--hover-transition), var(--scroll-transition);
 
             &.active {
                 color: var(--main-light-color);
@@ -321,7 +400,7 @@ header {
             margin: 0;
             border: 1px solid var(--dark-gray-color);
             padding: .8em 1.4em;
-            transition: var(--simple-transition);
+            transition: var(--hover-transition), var(--scroll-transition);
         
             &:hover {
                 border: 1px solid var(--main-light-color);
@@ -382,7 +461,7 @@ header {
 
     & li svg {
         color: var(--dark-gray-color);
-        transition: var(--simple-transition);
+        transition: var(--hover-transition), var(--scroll-transition);
 
         &:hover {
             color: var(--main-light-color);
@@ -435,8 +514,8 @@ header {
         top: 12px;
         width: 80%;
         right: 0;
-
     }
+
     .bar:after {
         top: 24px;
     }
@@ -473,28 +552,22 @@ header {
         display: none;
         width: 100%;
         min-height: 100vh;
-        animation: fadeIn ease-in-out .3s;
+        /* animation: fadeIn ease-in-out .3s; */
         touch-action: none;
-
     }
 
-
-
+    .main-nav > * {
+        animation: fadeIn ease-in-out .3s;
+    }
     .social-nav {
         display: none;
+        animation: fadeIn ease-in-out .3s;
     }
 
     .hamburger-menu {
         display: block;
     }
-
 }
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-
 
 
 /* Misc */
@@ -520,60 +593,7 @@ header {
 }
 
 
-
-.grid {
-    display: flex;
-    margin-top: 1rem;
-
-    &.two-one {
-        grid-template-columns: 2fr 1.5fr;
-        gap: clamp(2rem, 8vw, 8rem);
-    }
-
-
-
-    &.one-one {
-        gap: clamp(2rem, 1vw, 3rem);
-    }
-
-    &.even {
-        direction: rtl; /* Reverse the order of items within the grid item */
-      }
-
-    &.even  > * {
-        direction: ltr; /* Restore the original direction of child elements */
-      }
-
-    & .column {
-        flex: 1;
-    }
-
-
-    @media (max-width: 800px) {
-
-        &  {
-            flex-direction: column;
-
-            &.one-one {
-                flex-direction: column-reverse;
-            }
-        }
-        
-
-        
-      }
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-}
-
-.tag-container {
-    display: flex;
-    flex-wrap: wrap;
-}
+/* Hero section */
 
 .hero {
     background-color: #152020;
@@ -616,7 +636,8 @@ header {
 
     & .hello {
         font-size: clamp(0.9rem, 4vw, 2rem);
-        color: var(--dark-gray-color)
+        color: var(--dark-gray-color);
+        transition-delay: 100ms;
 
     }
 
@@ -626,11 +647,13 @@ header {
         font-size: clamp(2.1rem, 10vw, 5.6rem);
         color: var(--main-light-color);
         line-height: 0.8;
+        transition-delay: 200ms;
     }
 
     & .devo {
         font-size: clamp(1rem, 6vw, 2rem);
         color: var(--main-light-color);
+        transition-delay: 400ms;
 
     }
 
@@ -640,6 +663,7 @@ header {
         font-weight: 300;
         line-height: 1.5;
         max-width: 60ch;
+        transition-delay: 500ms;
 
     }
 
@@ -647,6 +671,7 @@ header {
         border: none; /* Remove default hr border */
         border-top: 2px solid var(--sec-light-color);
         max-width: 50rem;
+        transition-delay: 200ms;
         
 
     }
@@ -672,7 +697,7 @@ header {
     left: 50%;
     transform: translateX(-50%);
     top: 88vh;
-    transition: var(--simple-transition);
+    transition: var(--hover-transition), var(--scroll-transition);
 
     &:hover {
         filter: brightness(110%);
@@ -681,6 +706,8 @@ header {
 
 
 }
+
+/*  About section */
 
 .about {
     background-color: var(--bg-gray);
@@ -705,9 +732,12 @@ header {
         margin-right: 5px;
     }
 
+
+
+
 }
 
-/* Backgrounds */ 
+/*  Projects section */
 
 .projects {
     padding-bottom: 0;
@@ -834,6 +864,8 @@ header {
 
     }
 }
+
+/* Footer */
 
 footer {    
     background-color: #152020;

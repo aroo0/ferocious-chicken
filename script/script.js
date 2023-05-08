@@ -128,3 +128,24 @@ function handleResize() {
 
 handleResize();
 window.addEventListener('resize', handleResize);
+
+
+
+//  Intersection Observer aka Scroll Aniamtion 
+
+const animatedScrollElements = document.querySelectorAll('.scroll-animated')
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    entry.target.classList.toggle('show', entry.isIntersecting)
+    if (entry.isIntersecting) observer.unobserve(entry.target)
+  }, {
+    threshold: .7,
+  })
+})
+
+
+animatedScrollElements.forEach(el => {
+  observer.observe(el)
+
+})
