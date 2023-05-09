@@ -405,7 +405,7 @@ header {
         & a {
             color: var(--dark-gray-color);
             text-transform: uppercase;
-            padding: .6rem 1.3rem;
+            padding: .6rem;
             font-weight: 600;
             text-decoration: none; 
             transition: var(--hover-transition), var(--scroll-transition);
@@ -979,6 +979,7 @@ footer {
         font-weight: 300;
         text-shadow: 1px 1px 1px #000;
         z-index: 10;
+        text-align: center;
 
         & a {
             color: var(--main-light-color)
