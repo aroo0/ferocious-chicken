@@ -23,44 +23,35 @@ function generateYear() {
   yearContainer.textContent = year
 
 }
+
 generateYear()
 
-// Navlink menu active class on scroll
+// Actived class menu on scroll
 
 const sectionElements = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link")
+const navLinks = document.querySelectorAll(".nav-link");
 
-
-
-// Debounce function to limit the frequency of event handler invocation
-const debounce = (func, delay) => {
-  let timer;
-  return () => {
-    clearTimeout(timer);
-    timer = setTimeout(func, delay);
-  };
+const handleActiveOnScroll = entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const currentSection = entry.target.id;
+      navLinks.forEach(navLinkElement => {
+        if (navLinkElement.href.includes(currentSection)) {
+          document.querySelector(".active")?.classList.remove("active");
+          navLinkElement.classList.add("active");
+        }
+      });
+    }
+  });
 };
 
-const handleActiveOnScroll = () => {
-  let currentSection = 'home'
+const observerOne = new IntersectionObserver(handleActiveOnScroll, {
+  rootMargin: "-30% 0px -70% 0px"
+});
 
-  sectionElements.forEach(sectionElement => {
-    if (window.scrollY >= (sectionElement.offsetTop - (sectionElement.clientHeight / 10) )) {
-      currentSection = sectionElement.id
-    }
-  })
-
-  navLinks.forEach(navLinkElement => {
-    if (navLinkElement.href.includes(currentSection)) {
-      document.querySelector('.active')?.classList.remove('active')
-      navLinkElement.classList.add('active')
-    }
-  })
-}
-
-
-// Add event listener with debounced event handler
-window.addEventListener('scroll', debounce(handleActiveOnScroll, 100)); // Adjust delay as needed
+sectionElements.forEach(sectionElement => {
+  observerOne.observe(sectionElement);
+});
 
 
 
@@ -135,10 +126,10 @@ window.addEventListener('resize', handleResize);
 
 const animatedScrollElements = document.querySelectorAll('.scroll-animated')
 
-const observer = new IntersectionObserver(entries => {
+const scrollObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     entry.target.classList.toggle('show', entry.isIntersecting)
-    if (entry.isIntersecting) observer.unobserve(entry.target)
+    if (entry.isIntersecting) scrollObserver.unobserve(entry.target)
   }, {
     threshold: .7,
   })
@@ -146,7 +137,7 @@ const observer = new IntersectionObserver(entries => {
 
 
 animatedScrollElements.forEach(el => {
-  observer.observe(el)
+  scrollObserver.observe(el)
 
 })
 
