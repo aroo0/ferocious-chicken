@@ -43,9 +43,6 @@ body {
 
     --menu-transition: all .3s ease-in-out;
     --hover-transition: color 0.2s ease, border 0.2s ease;
-    --scroll-transition: opacity .5s ease 100ms, transform .5s ease 100ms, filter 1s ease 100ms;
-
-
 
     /* Margins */
 
@@ -336,7 +333,7 @@ a:has(.btn) {
     top: var(--margin-frame);
     left: var(--margin-frame);
     z-index: 100;
-    transition: var(--hover-transition), var(--scroll-transition);
+    transition: var(--hover-transition);
 
     &:hover {
         color: var(--main-light-color);
@@ -380,7 +377,7 @@ a:has(.btn) {
             justify-content: center;
             content: '\26AC';
             color: var(--dark-gray-color);
-            transition: var(--hover-transition), var(--scroll-transition);
+            transition: var(--hover-transition);
             
         }
 
@@ -390,7 +387,7 @@ a:has(.btn) {
             padding: .6rem;
             font-weight: 600;
             text-decoration: none; 
-            transition: var(--hover-transition), var(--scroll-transition);
+            transition: var(--hover-transition);
 
             &.active {
                 color: var(--main-light-color);
@@ -407,7 +404,7 @@ a:has(.btn) {
             margin: 0;
             border: 1px solid var(--dark-gray-color);
             padding: .8em 1.4em;
-            transition: var(--hover-transition), var(--scroll-transition);
+            transition: var(--hover-transition);
         
             &:hover {
                 border: 1px solid var(--main-light-color);
@@ -468,7 +465,7 @@ a:has(.btn) {
 
     & li svg {
         color: var(--dark-gray-color);
-        transition: var(--hover-transition), var(--scroll-transition);
+        transition: var(--hover-transition);
 
         &:hover {
             color: var(--main-light-color);
@@ -716,7 +713,7 @@ a:has(.btn) {
     left: 50%;
     transform: translateX(-50%);
     top: 88vh;
-    transition: var(--hover-transition), var(--scroll-transition);
+    transition: var(--hover-transition);
 
     &:hover {
         filter: brightness(110%);

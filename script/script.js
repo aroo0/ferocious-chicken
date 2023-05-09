@@ -84,7 +84,6 @@ navLinks.forEach(link => {
 
 
 
-
 //  Intersection Observer aka Scroll Aniamtion 
 
 const animatedScrollElements = document.querySelectorAll('.scroll-animated')
