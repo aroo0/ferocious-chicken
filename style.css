@@ -38,7 +38,9 @@ body {
     /* Transitions */
 
     --simple-transition: all 0.2s ease-out;
-    --button-transition: all 0.1s ease-in-out;
+    --button-bg-transition: background-color 0.1s ease-in-out;
+    --button-color-transition: background-color 0.1s ease-in-out;
+
     --menu-transition: all .3s ease-in-out;
     --hover-transition: color 0.2s ease, border 0.2s ease;
     --scroll-transition: opacity .5s ease 100ms, transform .5s ease 100ms, filter 1s ease 100ms;
@@ -221,7 +223,7 @@ a:has(.btn) {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    transition: var(--button-transition);
+    transition: var(--button-bg-transition), var(--button-color-transition);
     cursor: pointer;    
 
     &.primary {
