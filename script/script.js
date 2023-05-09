@@ -89,8 +89,8 @@ let lastScroll = 0;
 
 function handleScrollActivatedNav() {
   const currentScroll = window.scrollY;
-
-  if (currentScroll <= 0) {
+  if (currentScroll > 100) {  
+    if (currentScroll <= 0) {
     body.classList.remove('scroll-up');
   }
 
@@ -105,7 +105,8 @@ function handleScrollActivatedNav() {
   }
 
   lastScroll = currentScroll;
-}
+  }
+};
 
 function handleResize() {
   const windowWidth = window.innerWidth;

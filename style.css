@@ -279,6 +279,7 @@ header {
 
 .scroll-up header {
         background-color: var(--bg-dark);
+        transform: translate3d(0, 0, 0);
 
 }
 
@@ -442,7 +443,7 @@ header {
             position: absolute;
             top: 40%;
             left: 50%;
-            transform: translate(-50%, -60%);
+            transform: translate(-50%, -50%);
 
         }
 
@@ -650,13 +651,24 @@ header {
         filter: hue-rotate(50deg);
         z-index: 3;
 
+        @media (max-width: 1150px) {
+            & {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-height:800px) {
+            &  {
+             padding-top: 6rem;
+     
+         }
+        }
+
     }
     
-    @media (max-width: 1150px) {
-        .container {
-            max-width: 90%;
-        }
-    }
+
+
+
 
     & .hello {
         font-size: clamp(0.9rem, 4vw, 2rem);
