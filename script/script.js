@@ -83,44 +83,6 @@ navLinks.forEach(link => {
 })
 
 
-// Scroll-Activated Sticky Navigation
-
-let lastScroll = 0;
-
-function handleScrollActivatedNav() {
-  const currentScroll = window.scrollY;
-  if (currentScroll > 100) {  
-    if (currentScroll <= 0) {
-    body.classList.remove('scroll-up');
-  }
-
-  if (currentScroll > lastScroll && !body.classList.contains('scroll-down')) {
-    body.classList.remove('scroll-up');
-    body.classList.add('scroll-down');
-  }
-
-  if (currentScroll < lastScroll && body.classList.contains('scroll-down')) {
-    body.classList.remove('scroll-down');
-    body.classList.add('scroll-up');
-  }
-
-  lastScroll = currentScroll;
-  }
-};
-
-function handleResize() {
-  const windowWidth = window.innerWidth;
-
-  if (windowWidth > 1150) {
-    window.removeEventListener('scroll', handleScrollActivatedNav);
-  } else {
-    window.addEventListener('scroll', handleScrollActivatedNav);
-  }
-}
-
-handleResize();
-window.addEventListener('resize', handleResize);
-
 
 
 //  Intersection Observer aka Scroll Aniamtion 

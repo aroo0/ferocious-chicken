@@ -262,26 +262,8 @@ a:has(.btn) {
     }
 }
 
-/* Structure  */
-
-header {
-    position: inherit;
-    z-index: 80;
-    transition: var(--simple-transition);
-}
 
 /* Scroll header behavor */
-
-.scroll-down header {
-    transform: translate3d(0, -100%, 0);
-
-}
-
-.scroll-up header {
-        background-color: var(--bg-dark);
-        transform: translate3d(0, 0, 0);
-
-}
 
 .container {
     margin: 0 auto 0 10%;
@@ -498,7 +480,7 @@ header {
         left:auto;
         bottom: auto;
         right: var(--margin-frame);
-        top: 95svh;
+        top: 94vh;
         transition: var(--menu-transition);
         z-index: 110;
 
@@ -568,12 +550,6 @@ header {
 
 @media (max-width: 1150px) {
 
-    header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 60px;
-    }
 
     .main-nav {
         display: none;
@@ -593,6 +569,11 @@ header {
 
     .hamburger-menu {
         display: block;
+        position: absolute;
+    }
+
+    .logo {
+        position: absolute;
     }
 }
 
