@@ -883,7 +883,8 @@ a:has(.btn) {
 
 /* Footer */
 
-footer {    
+footer,
+.form__success-page {    
     background-color: #152020;
     display: flex;
     flex-direction: column;
