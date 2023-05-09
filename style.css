@@ -496,7 +496,9 @@ header {
     &.is-open {
         display: block;
         left:auto;
-        right: calc(var(--margin-frame));
+        bottom: auto;
+        right: var(--margin-frame);
+        top: 95svh;
         transition: var(--menu-transition);
         z-index: 110;
 
@@ -975,12 +977,11 @@ footer {
     .footer-text {
         color: var(--main-light-color);
         letter-spacing: 1px;
-        font-size: clamp(.6rem, 1.3vw, 0.8rem);
+        font-size: clamp(.5rem, 1.2vw, 0.8rem);
         font-weight: 300;
         text-shadow: 1px 1px 1px #000;
         z-index: 10;
         text-align: center;
-        color: red;
 
         & a {
             color: var(--main-light-color)
