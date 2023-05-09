@@ -384,7 +384,7 @@ a:has(.btn) {
         & a {
             color: var(--dark-gray-color);
             text-transform: uppercase;
-            padding: .6rem;
+            padding: .6rem 1rem;
             font-weight: 600;
             text-decoration: none; 
             transition: var(--hover-transition);
@@ -428,6 +428,7 @@ a:has(.btn) {
 
         & a {
             font-weight: 400;
+            padding: .6rem;
 
             &.active {
                 color: var(--main-light-color);
