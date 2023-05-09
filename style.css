@@ -980,6 +980,7 @@ footer {
         text-shadow: 1px 1px 1px #000;
         z-index: 10;
         text-align: center;
+        color: red;
 
         & a {
             color: var(--main-light-color)
