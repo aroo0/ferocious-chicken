@@ -311,7 +311,7 @@ a:has(.btn) {
 .column {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: clamp(1rem, 4vh, 3rem);
 }
 
 .tag-container {
@@ -628,7 +628,7 @@ a:has(.btn) {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 2rem;
+        gap: clamp(1rem, 3vh, 3rem);
         filter: hue-rotate(50deg);
         z-index: 3;
 
@@ -952,6 +952,12 @@ footer,
 
     & textarea {
         min-height: 12rem;
+
+        @media (max-width: 700px) {
+            & {
+                min-height: 8rem;
+            }
+        }
      }
 
     .footer-text {
