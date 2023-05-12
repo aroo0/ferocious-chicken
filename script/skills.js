@@ -14,12 +14,13 @@ const webFrameworks = [
   "React", 
   "Redux", 
   "Vite", 
-  "Astro"
+  "Astro",
 ];
 
 const designTools = [
   "Figma", 
-  "Photoshop"
+  "Photoshop",
+  "BEM"
 ];
 
 const allItems = [
