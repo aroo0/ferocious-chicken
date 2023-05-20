@@ -1,6 +1,7 @@
 const programmingLanguages = [
   "HTML",
   "JavaScript",
+  "TypeScript",
   "CSS",
   "Python",
   "PostCSS",
