@@ -553,7 +553,6 @@ a:has(.btn) {
         display: none;
         width: 100%;
         min-height: 100vh;
-        /* animation: fadeIn ease-in-out .3s; */
         touch-action: none;
     }
 
